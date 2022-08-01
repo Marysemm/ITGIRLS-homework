@@ -83,6 +83,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
+    padding: 0;
 }
 
 .header_item {
