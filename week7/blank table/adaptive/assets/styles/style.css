@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+.table {
+    width: 75%;
+    height: 60%;
+    flex-direction: column;
+    background-color: pink;
+}
+
+.head {
+    background-color: bisque;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    height: 60%;
+    flex-basis: content;
+    align-self: flex-end;
+}
+
+.main>.main_articles {
+    flex: 1;
+}
+
+.name {
+    padding-bottom: 60px;
+}
+
+.main_articles {
+    display: flex;
+    background-color: azure;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+}
+
+.articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+
+.article1,
+.article2,
+.article3 {
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(209, 189, 192);
+}
+
+.article1,
+.article2 {
+    width: 45%;
+}
+
+.article3 {
+    width: 100%;
+}
+
+.aside {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    padding: 10px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(204, 240, 192);
+}
+
+.section {
+    width: 22%;
+    padding: 25px;
+    margin: 17px;
+    background-color: blanchedalmond;
+}
+
+@media screen and (max-width: 786px) {
+    .table {
+        min-width: 100%;
+        margin: 0 auto;
+    }
+
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 60%;
+    }
+
+    .articles {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .article1,
+    .article2,
+    .article3 {
+        width: 100%;
+    }
+
+    .aside {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+    }
+
+}
