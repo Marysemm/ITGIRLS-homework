@@ -6,7 +6,7 @@ const buttonMinus = document.getElementById('buttonMinus');
 const buttonMultiply = document.getElementById('buttonMultiply');
 const buttonDivide = document.getElementById('buttonDivide');
 
-function onButtonPlus() {
+function clickOnButtonPlus() {
     let input1 = document.getElementById('number1');
     let input2 = document.getElementById('number2');
 
@@ -18,7 +18,7 @@ function onButtonPlus() {
     document.getElementById('results').innerHTML = result;
 }
 
-function onButtonMinus() {
+function clickOnButtonMinus() {
     let input1 = document.getElementById('number1');
     let input2 = document.getElementById('number2');
 
@@ -29,7 +29,8 @@ function onButtonMinus() {
 
     document.getElementById('results').innerHTML = result;
 }
-function onButtonMultiply() {
+
+function clickOnButtonMultiply() {
     let input1 = document.getElementById('number1');
     let input2 = document.getElementById('number2');
 
@@ -40,7 +41,8 @@ function onButtonMultiply() {
 
     document.getElementById('results').innerHTML = result;
 }
-function onButtonDivide() {
+
+function clickOnButtonDivide() {
     let input1 = document.getElementById('number1');
     let input2 = document.getElementById('number2');
 
