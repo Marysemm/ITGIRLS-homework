@@ -1,9 +1,15 @@
+.greeting {
+    margin: 30px auto;
+    width: 100px;
+    height: 40px;
+}
+
 .calculator {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 100px auto;
-    height: 350px;
+    height: 375px;
     width: 300px;
     background-color: rgb(244, 188, 250);
 }
@@ -36,6 +42,17 @@
     width: 150px;
 }
 
+.results {
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    align-items: center;
+}
+
 button:hover {
     background-color: rgb(176, 153, 197);
+}
+
+#changeColorToGray {
+    margin-top: 10px;
 }
