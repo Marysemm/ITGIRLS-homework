@@ -39,11 +39,13 @@ function clickOnButtonDivide() {
     document.getElementById('results').value = result;
 }
 
-function changeColor() {
-    document.getElementById('calculator').style.backgroundColor = "gray";
+function clearAll() {
+    input1.value = '';
+    input2.value = '';
+    results.value = '';
 }
 
-function change() {
-    let calcImg = document.getElementById('arrows');
-    calcImg.src = "https://www.officekanc.ru/images/product/mid/50621.jpg";
+
+function changeColor() {
+    document.getElementById('calculator').style.backgroundColor = "gray";
 }
