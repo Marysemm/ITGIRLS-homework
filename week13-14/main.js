@@ -3,13 +3,10 @@ const greetings = () => {
     alert(`Привет, ${userName}!`)
 }
 
-const buttonPlus = document.getElementById('buttonPlus');
-const buttonMinus = document.getElementById('buttonMinus');
-const buttonMultiply = document.getElementById('buttonMultiply');
-const buttonDivide = document.getElementById('buttonDivide');
-
 let input1 = document.getElementById('number1');
 let input2 = document.getElementById('number2');
+
+const buttonPlus = document.querySelector('buttonPlus');
 
 function clickOnButtonPlus() {
     let number1 = Number(input1.value);
@@ -18,12 +15,16 @@ function clickOnButtonPlus() {
     document.getElementById('results').value = result;
 }
 
+const buttonMinus = document.querySelector('buttonMinus');
+
 function clickOnButtonMinus() {
     let number1 = Number(input1.value);
     let number2 = Number(input2.value);
     let result = number1 - number2;
     document.getElementById('results').value = result;
 }
+
+const buttonMultiply = document.querySelector('buttonMultiply');
 
 function clickOnButtonMultiply() {
     let number1 = Number(input1.value);
@@ -32,6 +33,8 @@ function clickOnButtonMultiply() {
     document.getElementById('results').value = result;
 }
 
+const buttonDivide = document.querySelector('buttonDivide');
+
 function clickOnButtonDivide() {
     let number1 = Number(input1.value);
     let number2 = Number(input2.value);
@@ -39,11 +42,20 @@ function clickOnButtonDivide() {
     document.getElementById('results').value = result;
 }
 
-function changeColor() {
-    document.getElementById('calculator').style.backgroundColor = "gray";
+buttonDivide.addEventListener('click', errorMessage);
+function errorMessage() {
+    if (result === Infinity) {
+        document.GetElementById('errorMessage').innerHTML += 'На ноль делить нельзя';
+    }
 }
 
-function change() {
-    let calcImg = document.getElementById('arrows');
-    calcImg.src = "https://www.officekanc.ru/images/product/mid/50621.jpg";
+function clearAll() {
+    input1.value = '';
+    input2.value = '';
+    results.value = '';
+}
+
+
+function changeColor() {
+    document.getElementById('calculator').style.backgroundColor = "gray";
 }
