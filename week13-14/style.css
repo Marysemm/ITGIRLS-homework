@@ -42,6 +42,10 @@
     width: 150px;
 }
 
+#errorMessage {
+    color: brown;
+}
+
 .results {
     display: flex;
     width: 150px;

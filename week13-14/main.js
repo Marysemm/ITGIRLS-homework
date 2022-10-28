@@ -3,13 +3,10 @@ const greetings = () => {
     alert(`Привет, ${userName}!`)
 }
 
-const buttonPlus = document.getElementById('buttonPlus');
-const buttonMinus = document.getElementById('buttonMinus');
-const buttonMultiply = document.getElementById('buttonMultiply');
-const buttonDivide = document.getElementById('buttonDivide');
-
 let input1 = document.getElementById('number1');
 let input2 = document.getElementById('number2');
+
+const buttonPlus = document.querySelector('buttonPlus');
 
 function clickOnButtonPlus() {
     let number1 = Number(input1.value);
@@ -18,12 +15,16 @@ function clickOnButtonPlus() {
     document.getElementById('results').value = result;
 }
 
+const buttonMinus = document.querySelector('buttonMinus');
+
 function clickOnButtonMinus() {
     let number1 = Number(input1.value);
     let number2 = Number(input2.value);
     let result = number1 - number2;
     document.getElementById('results').value = result;
 }
+
+const buttonMultiply = document.querySelector('buttonMultiply');
 
 function clickOnButtonMultiply() {
     let number1 = Number(input1.value);
@@ -32,11 +33,20 @@ function clickOnButtonMultiply() {
     document.getElementById('results').value = result;
 }
 
+const buttonDivide = document.querySelector('buttonDivide');
+
 function clickOnButtonDivide() {
     let number1 = Number(input1.value);
     let number2 = Number(input2.value);
     let result = number1 / number2;
     document.getElementById('results').value = result;
+}
+
+buttonDivide.addEventListener('click', errorMessage);
+function errorMessage() {
+    if (result === Infinity) {
+        document.GetElementById('errorMessage').innerHTML += 'На ноль делить нельзя';
+    }
 }
 
 function clearAll() {
