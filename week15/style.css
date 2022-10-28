@@ -5,7 +5,7 @@
     margin: 20px auto;
     padding: 20px;
     width: 400px;
-    height: 430px;
+    height: 470px;
     border: 2px solid rgb(11, 4, 49);
     border-radius: 10px;
     box-shadow: 0 0 0 3px #120c6b,
@@ -27,6 +27,7 @@ label {
     color: #0b0743;
 }
 
+.wrapper__userName,
 .wrapper__email,
 .wrapper__number,
 .wrapper__password {
@@ -46,6 +47,7 @@ fieldset {
     border: 2px solid rgb(102, 100, 116);
 }
 
+#userName,
 #email,
 #number,
 #password1,

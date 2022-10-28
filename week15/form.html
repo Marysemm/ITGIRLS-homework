@@ -16,6 +16,10 @@
 <body>
     <div class="wrapper">
         <h1>Регистрация</h1>
+        <div class="wrapper__userName">
+            <label for="userName">имя</label>
+            <input type="text" name="userName" id="userName">
+        </div>
         <div class="wrapper__email">
             <label for="email">почта</label>
             <input type="email" name="email" id="email" placeholder="email@gmail.com">
@@ -33,11 +37,11 @@
             </fieldset>
         </div>
         <div class="wrapper__agreements">
-            <input type="checkbox" name="agreements" id="agreements" onclick="checkCheckbox()">
+            <input type="checkbox" name="agreements" id="agreements">
             <label for="agreements">Я даю согласие на обработку данных</label>
         </div>
         <div id="errorMessage"></div>
-        <button id="logIn" type="button" onclick="checkInputs();">
+        <button id="logIn" type="button" onclick="checkInputs()">
             <span id="register">зарегистрироваться</span>
         </button>
     </div>
