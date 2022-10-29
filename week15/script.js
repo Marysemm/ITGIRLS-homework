@@ -1,3 +1,8 @@
+function changeColor() {
+    let selectedColor = document.getElementById("selectTheme").value;
+    document.body.style.backgroundColor = selectedColor;
+}
+
 function checkInputs() {
     let userName = document.querySelector('#userName');
     let email = document.querySelector('#email');
