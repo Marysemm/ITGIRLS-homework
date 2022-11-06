@@ -38,11 +38,15 @@ const buttonDivide = document.querySelector('buttonDivide');
 function clickOnButtonDivide() {
     let number1 = Number(input1.value);
     let number2 = Number(input2.value);
-    let result = number1 / number2;
+    let result;
+    document.getElementById('errorMessage').innerHTML = "";
     if (number2 == 0) {
         document.getElementById('errorMessage').innerHTML += 'На ноль делить нельзя';
     }
-    else (document.getElementById('results').value = result);
+    else {
+        result = number1 / number2;
+        document.getElementById('results').value = result;
+    }
 }
 
 function clearAll() {

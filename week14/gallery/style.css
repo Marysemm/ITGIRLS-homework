@@ -1,0 +1,12 @@
+ul {
+    list-style-type: none;
+}
+
+.gallery {
+    display: flex;
+    margin: 0 auto;
+}
+
+.gallery__carousel {
+    margin: 20px auto;
+}
