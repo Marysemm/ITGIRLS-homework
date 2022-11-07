@@ -1,12 +1,10 @@
-ul {
-    list-style-type: none;
-}
-
 .gallery {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin: 0 auto;
 }
 
-.gallery__carousel {
-    margin: 20px auto;
+.arrow {
+    height: 30px;
 }
