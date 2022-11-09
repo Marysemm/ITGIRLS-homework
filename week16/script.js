@@ -1,11 +1,31 @@
+const input = document.getElementById("text");
+const result = document.getElementById("calc");
+const newArray = document.getElementById("array");
+const inputSum = document.getElementById("sum");
+const clearAll = document.getElementById("clear");
+let array = [];
 
-function showMessage(a, b) {
-    alert("a+b");
-}
-showMessage(2, 3) //function declaration
+input.addEventListener("change", () => {
+    if (input.value !== "") {
+        array.push(Number(input.value));
+        input.value = "";
+    }
+});
 
+result.addEventListener("click", () => {
+    array.sort((a, b) => a - b);
+    newArray.innerHTML += array.join(', ');
+});
 
-let showMessageTwo = function (a, b) {
-    alert("a+b");
-}
-alert(showMessage); //function expression
+inputSum.addEventListener("click", () => {
+    for (let i = 0; i < array.length; i++) {
+        inputSum.value = Number(inputSum.value) + Number(array[i]);
+    }
+    document.getElementById("totalSum").innerHTML += inputSum.value;
+});
+
+clearAll.addEventListener("click", () => {
+    array.length = 0;
+    newArray.innerHTML = '';
+    document.getElementById("totalSum").innerHTML = "";
+})
