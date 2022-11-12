@@ -1,8 +1,7 @@
 const input = document.getElementById("text");
-const result = document.getElementById("calc");
 const newArray = document.getElementById("array");
-const inputSum = document.getElementById("sum");
 const clearAll = document.getElementById("clear");
+const total = document.getElementById("total");
 let array = [];
 
 input.addEventListener("change", () => {
@@ -12,16 +11,16 @@ input.addEventListener("change", () => {
     }
 });
 
-result.addEventListener("click", () => {
+total.addEventListener("click", () => {
     array.sort((a, b) => a - b);
     newArray.innerHTML += array.join(', ');
 });
 
-inputSum.addEventListener("click", () => {
+total.addEventListener("click", () => {
     for (let i = 0; i < array.length; i++) {
-        inputSum.value = Number(inputSum.value) + Number(array[i]);
+        total.value = Number(total.value) + Number(array[i]);
     }
-    document.getElementById("totalSum").innerHTML += inputSum.value;
+    document.getElementById("totalSum").innerHTML += total.value;
 });
 
 clearAll.addEventListener("click", () => {
