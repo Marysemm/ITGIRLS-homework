@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let array = ['js', 'css', 'html'];
+        console.log(array[0]); //Дан массив ['js', 'css', 'html']. Выведите на экран первый элемент.
+
+        let array1 = [0, 1, false, 2, undefined, '', 3, null];
+        let array1Filter = array1.filter(Boolean).join(', ');
+        console.log(array1Filter); //. Отфильтруйте массив [0, 1, false, 2, undefined, '', 3, null] от нежелательных значений, таких как false, undefined, пустые строки, 0, null с помощью метода filter.  Ожидаемый результат: [1, 2, 3].
+
+        let array2 = [[1, 2], [1, 2, 3], [1, 2, 3, 4]];
+        console.log(array2);
+        let el = array2.findIndex(el => el.length > 3);
+        console.log(el); // Дан массив [[1,2], [1,2,3], [1,2,3,4]]. Найдите индекс массива, длина которого > 3. Ожидаемый результат: 2
+
+
+    </script>
+</body>
+
+</html>
