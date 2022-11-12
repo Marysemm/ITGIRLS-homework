@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="fio">Введите ФИО:</label>
+    <input id="fio" type="text" placeholder="Фамилия Имя Отчество">
+    <button id="enter">Ввод</button>
+    <div>
+        <label for="secondName">Фамилия:</label>
+        <input id="secondName" type="text">
+        <label for="firstName">Имя:</label>
+        <input id="firstName" type="text">
+        <label for="middleName">Отчество:</label>
+        <input id="middleName" type="text">
+    </div>
+
+    <script>
+        const enter = document.querySelector('#enter');
+        const fio = document.querySelector("#fio");
+        const secondName = document.querySelector("#secondName");
+        const firstName = document.querySelector("#firstName");
+        const middleName = document.querySelector("#middleName");
+
+        function enterName() {
+            const wholeName = fio.value;
+            let arrayName = wholeName.split(" ");
+
+            secondName.value = arrayName.shift();
+            secondName.value = secondName.value.slice(0, 1).toUpperCase() + secondName.value.slice(1).toLowerCase();
+            firstName.value = arrayName.shift();
+            firstName.value = firstName.value.slice(0, 1).toUpperCase() + firstName.value.slice(1).toLowerCase();
+            middleName.value = arrayName.shift();
+            middleName.value = middleName.value.slice(0, 1).toUpperCase() + middleName.value.slice(1).toLowerCase();
+        }
+
+        enter.addEventListener('click', enterName);
+    </script>
+</body>
+
+</html>

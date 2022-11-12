@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="greeting">
+        <button id="question" onclick="greetings()">Как тебя зовут?</button>
+    </div>
+    <div class="calculator" id="calculator">
+        <div class="numbers">
+            <label>Первое число:</label>
+            <input type="number" id="number1">
+            <label>Второе число:</label>
+            <input type="number" id="number2">
+        </div>
+        <div class="buttons">
+            <button id="buttonPlus" onclick="clickOnButtonPlus()">Сложение</button>
+            <button id="buttonMinus" onclick="clickOnButtonMinus()">Вычитание</button>
+            <button id="buttonMultiply" onclick="clickOnButtonMultiply()">Умножение</button>
+            <button id="buttonDivide" onclick="clickOnButtonDivide()">Деление</button>
+        </div>
+        <div id="errorMessage"></div>
+        <div class="results">Результат:
+            <input type="text" id="results"></input>
+        </div>
+
+        <button onclick="clearAll()" id="clear">Очистить</button>
+        <button onclick="changeColor()" id="changeColorToGray">Сменить цвет</button>
+    </div>
+
+
+    <script src="./main.js"></script>
+
+</body>
+
+</html>

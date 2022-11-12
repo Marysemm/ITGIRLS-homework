@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="form">
+        <h1 class="title">Калькулятор стоимости авто</h1>
+        <fieldset>
+            <h2 class="subtitle1">Марка</h2>
+            <select class="auto">
+                <option value="100000" class="Audi">Audi</option>
+                <option value="500000" class="BMW">BMW</option>
+                <option value="375000" class="Peugeot">Peugeot</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <h2 class="subtitle2">Тип услуги</h2>
+            <label for="whole_car">
+                <input type="radio" class="inputOptions" name="inputOptions" id="whole_car" value="10000">
+                <span>Целый автомобиль</span>
+            </label>
+            <label for="half_car">
+                <input type="radio" class="inputOptions" name="inputOptions" id="half_car" value="5000">
+                <span>Распил</span>
+            </label>
+            <label for="part_car">
+                <input type="radio" class="inputOptions" name="inputOptions" id="part_car" value="3000">
+                <span>Запчасти</span>
+            </label>
+        </fieldset>
+        <fieldset>
+            <h2 class="subtitle3">Дополнительные услуги</h2>
+            <label for="tea">
+                <input type="checkbox" class="extraItems" id="tea" value="50">
+                <span>Чай</span>
+            </label>
+            <label for="coffee" class="extraItems" id="coffee" value="150">
+                <input type="checkbox">
+                <span>Кофе</span>
+            </label>
+            <label for="water" class="extraItems" id="water" value="100">
+                <input type="checkbox">
+                <span>Вода</span>
+            </label>
+        </fieldset>
+        <div>
+            <button>Рассчитать</button>
+            <p class="result"></p>
+        </div>
+    </form>
+
+    <script src="./calc.js"></script>
+</body>
+
+</html>
