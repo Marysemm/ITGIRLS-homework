@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+    <label for="comments"></label>
+    <input type="text" id="comments">
+    <input type="button" id="btn" onclick="checkSpam(comments)" value="Send">
+
+    <script>
+        let send = document.getElementById("btn");
+        let talkContainer = document.querySelector(".container");
+        let comment = document.getElementById("comments");
+
+        function checkSpam(comments) {
+            send.addEventListener("click", () => {
+                let commentInput = document.getElementById("comments");
+                if (!commentInput.value) return;
+                let str = commentInput.value.replace(/(viagra|виагра|xxx)/gi, '***');
+                let moderatedComment = checkSpam(str);
+                talkContainer.innerHTML = talkContainer.innerHTML + moderatedComment;
+                commentInput.value = "";
+            });
+            return `<div>${comments}</div> <hr>`;
+        }
+    </script>
+</body>
+
+</html>

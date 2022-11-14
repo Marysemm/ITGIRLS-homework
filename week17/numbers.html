@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="buttonCreate">Сгенерировать числа</button>
+    <div id="numbers">Числа: </div>
+    <div id="minimum">Минимальное: </div>
+    <div id="maximum">Максимальное: </div>
+    <div id="average">Среднее арифметическое: </div>
+    <div id="sum">Сумма чисел: </div>
+    <div id="multiplication">Произведение чисел: </div>
+    <button id="buttonClear">Сброс</button>
+
+    <script>
+        let buttonCreate = document.getElementById("buttonCreate");
+        let numbers = document.getElementById("numbers");
+        let min = document.getElementById("minimum");
+        let max = document.getElementById("maximum");
+        let average = document.getElementById("average");
+        let sum = document.getElementById("sum");
+        let multiplication = document.getElementById("multiplication");
+        let array = [];
+
+        function start() {
+            //Рандомные числа
+            for (let i = 0; i < 10; i++) {
+                array.push(Math.round(((Math.random() - 0.5) * 2 * 10)));
+            }
+            let arrayString = array.join(' ');
+            numbers.innerHTML = numbers.innerHTML + `${arrayString}`;
+
+            //Минимальное число
+            let minNumber = array[0];
+            for (let item of array) {
+                if (item < minNumber) {
+                    minNumber = item;
+                }
+            }
+            min.innerHTML = min.innerHTML + minNumber;
+
+            //Максимальное число
+            let maxNumber = array[0];
+            for (let item of array) {
+                if (item > maxNumber) {
+                    maxNumber = item;
+                }
+            }
+            max.innerHTML = max.innerHTML + maxNumber;
+
+            //Сумма чисел
+            let sumNumbers = 0;
+            for (let i = 0; i < array.length; i++) {
+                sumNumbers += array[i];
+            }
+            sum.innerHTML = sum.innerHTML + sumNumbers;
+
+            //Среднее арифметическое
+            let averageNumber = sumNumbers / array.length;
+            average.innerHTML = average.innerHTML + averageNumber;
+
+            //Произведение чисел
+            let multiplicationNumbers = 1;
+            for (let i = 0; i < array.length; i++) {
+                multiplicationNumbers *= array[i];
+            }
+            console.log(multiplicationNumbers);
+            multiplication.innerHTML = multiplication.innerHTML + multiplicationNumbers;
+        }
+
+        function clearAll() {
+            array.length = [0];
+            numbers.innerHTML = "Числа: ";
+            min.innerHTML = "Минимальное: ";
+            max.innerHTML = "Максимальное: ";
+            sum.innerHTML = "Сумма чисел: ";
+            average.innerHTML = "Среднее арифметическое: ";
+            multiplication.innerHTML = "Произведение чисел: "
+        }
+        buttonCreate.addEventListener("click", start);
+        buttonClear.addEventListener("click", clearAll);
+    </script>
+
+</body>
+
+</html>
