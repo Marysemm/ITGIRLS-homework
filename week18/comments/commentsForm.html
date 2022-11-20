@@ -6,27 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            margin: 10px;
+            padding: 10px;
+            background-color: pink;
+        }
+
+        input {
+            margin: 10px;
+            width: 50%;
+        }
+
+        #btn {
+            width: 20%;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container"></div>
-    <label for="comments"></label>
-    <input type="text" id="comments" placeholder="Ваш комментарий">
-    <input type="button" id="btn" value="Send">
-    <input type="text" id="userName" class="userName">
-    <label for="userName">Введите имя</label>
-    <input type="text" id="avatar">
-    <label for="avatar">Добавьте ссылку на свой аватар</label>
+    <div class="wrapper">
+        <div class="container"></div>
+        <label for="comments"></label>
+        <input type="text" id="comments" placeholder="Ваш комментарий">
+        <input type="button" id="btn" value="Send">
+        <input type="text" id="userName" class="userName" placeholder="Введите имя">
+        <label for="userName"></label>
+        <input type="text" id="avatar" placeholder="Добавьте ссылку на свой аватар">
+        <label for="avatar"></label>
+    </div>
 
     <script>
-        let send = document.getElementById("btn");
-        let talkContainer = document.querySelector(".container");
-        let comment = document.getElementById("comments");
-        let userName = document.querySelector(".userName");
+        const send = document.getElementById("btn");
+        const talkContainer = document.querySelector(".container");
+        const comment = document.getElementById("comments");
+        const userName = document.querySelector(".userName");
 
         let arrayComments = [];
-        let arrayNames = [];
+        //let arrayNames = [];
 
         function newMessage() {
             let chatMessage = "";
@@ -49,15 +71,22 @@
             localStorage.setItem('comments', arrayComments)
         }
 
-        function addName() {
-            let newName = userName.value;
-            arrayNames.push(newName);
-            userName.value = '';
-        }
-
-        send.addEventListener('click', addName);
         send.addEventListener('click', addComment);
 
+        /*        function addName() {
+                    let newName = userName.value;
+                    arrayNames.push(newName);
+                    userName.value = '';
+                }
+        
+                const image = document.createElement('img');
+                let avatar = document.getElementById('avatar').value;
+                let img = avatar;
+                document.getElementById('avatar').value = '';
+                let picture = document.body.appendChild(image);
+        
+                send.addEventListener('click', addName);
+        */
     </script>
 </body>
 
