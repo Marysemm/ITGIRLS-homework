@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container"></div>
+    <label for="comments"></label>
+    <input type="text" id="comments" placeholder="Ваш комментарий">
+    <input type="button" id="btn" value="Send">
+    <input type="text" id="userName" class="userName">
+    <label for="userName">Введите имя</label>
+    <input type="text" id="avatar">
+    <label for="avatar">Добавьте ссылку на свой аватар</label>
+
+    <script>
+        let send = document.getElementById("btn");
+        let talkContainer = document.querySelector(".container");
+        let comment = document.getElementById("comments");
+        let userName = document.querySelector(".userName");
+
+        let arrayComments = [];
+        let arrayNames = [];
+
+        function newMessage() {
+            let chatMessage = "";
+            for (let items of arrayComments) {
+                chatMessage += `<div>${items}</div>`;
+            }
+            talkContainer.innerHTML = chatMessage;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            newMessage();
+        });
+
+        function addComment() {
+            let comments = comment.value;
+            let filter = comments.replace(/viagra/ig, '*****');
+            arrayComments.push(filter);
+            comment.value = '';
+            newMessage();
+            localStorage.setItem('comments', arrayComments)
+        }
+
+        function addName() {
+            let newName = userName.value;
+            arrayNames.push(newName);
+            userName.value = '';
+        }
+
+        send.addEventListener('click', addName);
+        send.addEventListener('click', addComment);
+
+    </script>
+</body>
+
+</html>
