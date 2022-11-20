@@ -48,7 +48,6 @@
         const userName = document.querySelector(".userName");
 
         let arrayComments = [];
-        //let arrayNames = [];
 
         function newMessage() {
             let chatMessage = "";
@@ -64,21 +63,18 @@
 
         function addComment() {
             let comments = comment.value;
-            let filter = comments.replace(/viagra/ig, '*****');
+            let newName = userName.value + ": ";
+            let filter = newName + comments.replace(/viagra/ig, '*****');
             arrayComments.push(filter);
             comment.value = '';
+            userName.value = '';
             newMessage();
             localStorage.setItem('comments', arrayComments)
         }
 
         send.addEventListener('click', addComment);
 
-        /*        function addName() {
-                    let newName = userName.value;
-                    arrayNames.push(newName);
-                    userName.value = '';
-                }
-        
+        /*Попытка добавить изображение, не вышло
                 const image = document.createElement('img');
                 let avatar = document.getElementById('avatar').value;
                 let img = avatar;
