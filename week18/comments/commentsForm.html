@@ -30,8 +30,8 @@
 
 <body>
 
-    <div class="wrapper">
-        <div class="container"></div>
+    <div class="wrapper" id="wrapper">
+        <div class="container" id="container"></div>
         <label for="comments"></label>
         <input type="text" id="comments" placeholder="Ваш комментарий">
         <input type="button" id="btn" value="Send">
@@ -62,27 +62,24 @@
         });
 
         function addComment() {
+            let imgUrl = document.getElementById('avatar').value;
+            let img = document.createElement('img');
+            img.src = imgUrl;
+            img.style.height = '100px';
+            wrapper.prepend(img);
             let comments = comment.value;
             let newName = userName.value + ": ";
             let filter = newName + comments.replace(/viagra/ig, '*****');
             arrayComments.push(filter);
             comment.value = '';
             userName.value = '';
+            document.getElementById('avatar').value = '';
             newMessage();
             localStorage.setItem('comments', arrayComments)
         }
 
         send.addEventListener('click', addComment);
 
-        /*Попытка добавить изображение, не вышло
-                const image = document.createElement('img');
-                let avatar = document.getElementById('avatar').value;
-                let img = avatar;
-                document.getElementById('avatar').value = '';
-                let picture = document.body.appendChild(image);
-        
-                send.addEventListener('click', addName);
-        */
     </script>
 </body>
 
