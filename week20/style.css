@@ -1,0 +1,68 @@
+body {
+    background-color: #cce9edbd;
+}
+
+.title {
+    font: bold 18pt 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.card__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px;
+    height: 850px;
+}
+
+.card__img {
+    width: 450px;
+}
+
+.card__title {
+    font: bold 17pt 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.card__subtitle,
+.card__text {
+    font: bold 15pt 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.card__text {
+    font: 12pt 'Courier New', Courier, monospace;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+}
+
+.stars.disabled {
+    pointer-events: none;
+}
+
+.stars a {
+    opacity: 50%;
+    cursor: pointer;
+    height: auto;
+    width: 30px;
+}
+
+.stars:hover a {
+    opacity: 100%;
+}
+
+.stars a:hover {
+    opacity: 100%;
+}
+
+.stars a:hover~a {
+    opacity: 50%;
+}
+
+.stars a.active {
+    opacity: 100%;
+}
