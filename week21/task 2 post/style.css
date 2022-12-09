@@ -1,0 +1,59 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px auto;
+    padding: 20px;
+    width: 400px;
+    height: 270px;
+    border: 2px solid rgb(11, 4, 49);
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px #120c6b,
+        0 0 0 7px #0e11b4,
+        0 0 0 10px #5272f3;
+}
+
+h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 30px;
+    margin: 0 auto;
+    color: #0b0743;
+    text-transform: uppercase;
+}
+
+.wrapper__userName,
+.wrapper__email {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid rgb(102, 100, 116);
+}
+
+#userName,
+#email {
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button {
+    font-family: 'EB Garamond', serif;
+    font-size: 25px;
+    color: white;
+    background-color: #170f91;
+    border-radius: 10px;
+    height: 42px;
+    padding-bottom: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #0c0a53;
+    box-shadow: 0 1px 1px rgba(4, 4, 50, 0.2);
+}
