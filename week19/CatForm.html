@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Survey</title>
+    <style>
+        input:valid {
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body style="background-image: linear-gradient(10deg, rgb(255, 255, 255) 20%, rgb(99, 157, 227) 50%);">
+    <form>
+        <h1>Опрос</h1>
+        <div style="margin-bottom: 10px;">
+            <label for="fio">Ф.И.О.</label>
+            <input type="text" id="fio" required>*
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="phone">Номер телефона</label>
+            <input type="tel" id="phone" minlength="10" maxlength="20" required>*
+        </div>
+        <fieldset>
+            <legend>О питомце</legend>
+            <div style="margin-bottom: 10px;"><label for="nickname">Кличка питомца</label>
+                <input type="text" id="nickname" required>*
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="breed">Порода питомца</label>
+                <select class="breed" id="breed">
+                    <option value="" selected disabled hidden>Выберите породу</option>
+                    <option value="Британская короткошерстная">Британская короткошерстная</option>
+                    <option value="Сиамская">Сиамская</option>
+                    <option value="Шотландская вислоухая">Шотландская вислоухая</option>
+                    <option value="Сибирская">Сибирская</option>
+                    <option value="Русская голубая">Русская голубая</option>
+                    <option value="Мейн-кун">Мейн-кун</option>
+                    <option value="Невская маскарадная">Невская маскарадная</option>
+                    <option value="Сфинкс">Сфинкс</option>
+                    <option value="Бенгальская">Бенгальская</option>
+                    <option value="Рэгдолл">Рэгдолл</option>
+                    <option value="Персидская">Персидская</option>
+                    <option value="Тайская">Тайская</option>
+                    <option value="Скоттиш страйт">Скоттиш страйт</option>
+                    <option value="Другая">Другая</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">Укажите пол питомца: </div>
+            <div style="margin-bottom: 2px;">
+                <label for="m">Самец</label>
+                <input type="radio" id="m" name="sex" value="male">
+            </div>
+            <div style="margin-bottom: 2px;">
+                <label for="f">Самка</label>
+                <input type="radio" id="f" name="sex" value="female">
+            </div>
+            <div style="margin-bottom: 10px;">Чем питается ваш питомец? </div>
+            <div style="margin-bottom: 2px;">
+                <label for="dry_food">Сухой корм</label>
+                <input type="checkbox" id="dry_food" name="food" value="dry food">
+            </div>
+            <div style="margin-bottom: 2px;">
+                <label for="wet_food">Влажный корм</label>
+                <input type="checkbox" id="wet_food" name="food" value="wet food">
+            </div>
+            <div style="margin-bottom: 2px;">
+                <label for="natural_food">Натуральный корм</label>
+                <input type="checkbox" id="natural_food" name="food" value="natural food">
+            </div>
+            </div>
+            <div style="margin-bottom: 10px;">Здесь можно описать характер своего питомца :) <br>
+                <textarea rows="5" cols="40"></textarea>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="photo">Добавить фото питомца</label>
+                <input type="file" id="photo">
+            </div>
+        </fieldset>
+        <div style="margin-top: 10px;">
+            <button onclick="newCat()">Сохранить</button>
+        </div>
+    </form>
+
+
+    <script>
+        class Cat {
+            constructor(fio, phone, nickname, breed, sex, food) {
+                this.fio = fio;
+                this.phone = phone;
+                this.nickname = nickname;
+                this.breed = breed;
+                this.sex = sex;
+            }
+        };
+
+        function newCat() {
+            event.preventDefault();
+
+            let fio = document.getElementById('fio').value;
+            let phone = Number(document.getElementById('phone').value);
+            let nickname = document.getElementById('nickname').value;
+            let breed = document.getElementById('breed').value;
+            let chooseSex = document.querySelectorAll("input[name='sex']");
+
+            function checkChosenSex() {
+                let i;
+                for (i = 0; i < chooseSex.length; i++) {
+                    if (chooseSex[i].checked) {
+                        break;
+                    }
+                }
+                return chooseSex[i].value;
+            }
+
+            let chosenSex = checkChosenSex();
+
+            let userCat = new Cat(fio, phone, nickname, breed, chosenSex);
+
+            function checkChosenFood() {
+                let chooseFood = document.querySelectorAll("input[name='food']");
+                let allFood = [];
+                for (let i = 0; i < chooseFood.length; i++) {
+                    if (chooseFood[i].checked) {
+                        allFood.push(chooseFood[i].value);
+                    }
+                }
+                console.log(allFood);
+                return allFood.join(", ");
+            }
+
+            if (checkChosenFood()) {
+                userCat.allFood = checkChosenFood();
+            }
+
+            console.log(userCat);
+        }
+
+    </script>
+</body>
+
+</html>
