@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Survey</title>
+    <style>
+        input:valid {
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body style="background-image: linear-gradient(10deg, rgb(255, 255, 255) 20%, rgb(99, 157, 227) 50%);">
+    <form id="survey">
+        <h1>Опрос</h1>
+        <div style="margin-bottom: 10px;">
+            <label for="fio">Ф.И.О.</label>
+            <input type="text" id="fio" name="name" required>*
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="phone">Номер телефона</label>
+            <input type="tel" id="phone" name="phone" minlength="10" maxlength="20" required>*
+        </div>
+        <fieldset>
+            <legend>О питомце</legend>
+            <div style="margin-bottom: 10px;"><label for="nickname">Кличка питомца</label>
+                <input type="text" id="nickname" name="nickname" required>*
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="breed">Порода питомца</label>
+                <select class="breed" id="breed">
+                    <option value="" selected disabled hidden>Выберите породу</option>
+                    <option name="breed" value="Британская короткошерстная">Британская короткошерстная</option>
+                    <option name="breed" value="Сиамская">Сиамская</option>
+                    <option name="breed" value="Шотландская вислоухая">Шотландская вислоухая</option>
+                    <option name="breed" value="Сибирская">Сибирская</option>
+                    <option name="breed" value="Русская голубая">Русская голубая</option>
+                    <option name="breed" value="Мейн-кун">Мейн-кун</option>
+                    <option name="breed" value="Невская маскарадная">Невская маскарадная</option>
+                    <option name="breed" value="Сфинкс">Сфинкс</option>
+                    <option name="breed" value="Бенгальская">Бенгальская</option>
+                    <option name="breed" value="Рэгдолл">Рэгдолл</option>
+                    <option name="breed" value="Персидская">Персидская</option>
+                    <option name="breed" value="Тайская">Тайская</option>
+                    <option name="breed" value="Скоттиш страйт">Скоттиш страйт</option>
+                    <option name="breed" value="Другая">Другая</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">Укажите пол питомца: </div>
+            <div style="margin-bottom: 2px;">
+                <label for="m">Самец</label>
+                <input type="radio" id="m" name="sex" value="male">
+            </div>
+            <div style="margin-bottom: 2px;">
+                <label for="f">Самка</label>
+                <input type="radio" id="f" name="sex" value="female">
+            </div>
+            <div style="margin-bottom: 10px;">Чем питается ваш питомец? </div>
+            <div style="margin-bottom: 2px;">
+                <label for="dry_food">Сухой корм</label>
+                <input type="checkbox" id="dry_food" name="food" value="dry food">
+            </div>
+            <div style="margin-bottom: 2px;">
+                <label for="wet_food">Влажный корм</label>
+                <input type="checkbox" id="wet_food" name="food" value="wet food">
+            </div>
+            <div style="margin-bottom: 2px;">
+                <label for="natural_food">Натуральный корм</label>
+                <input type="checkbox" id="natural_food" name="food" value="natural food">
+            </div>
+            </div>
+            <div style="margin-bottom: 10px;">Здесь можно описать характер своего питомца :) <br>
+                <textarea rows="5" cols="40"></textarea>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="photo">Добавить фото питомца</label>
+                <input type="file" id="photo">
+            </div>
+        </fieldset>
+        <div style="margin-top: 10px;">
+            <button id="sendForm">Сохранить</button>
+        </div>
+    </form>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
