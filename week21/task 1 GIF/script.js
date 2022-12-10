@@ -1,7 +1,7 @@
 function searchGif() {
     let searchGif = document.getElementById("searchGif").value;
 
-    fetch("https://api.giphy.com/v1/gifs/search?api_key=uUkfvlgPFoRIRTy3sKQ1yRVNHN7HyjZR&q=cat&limit=5&offset=&rating=g&lang=en" + searchGif)
+    fetch("https://api.giphy.com/v1/gifs/search?api_key=uUkfvlgPFoRIRTy3sKQ1yRVNHN7HyjZR&q="+searchGif+"&limit=5&offset=&rating=g&lang=en")
         .then(response => response.json())
         .then(getGif => {
             let resultGif = '';
